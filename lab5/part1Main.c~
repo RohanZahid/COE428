@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+extern int pop();
+extern void push(int);
+
+int main(int argc, char * argv[])
+{
+  int i;
+  int ch;
+  while ((ch = getchar()) != EOF) {
+    if (!(isalpha(ch) || ch == '>' || ch == '<' || ch == '/'))
+      continue;
+    //
+    if(ch == '<')
+    	i = 1;
+    if(i == 1 && ch == '/')
+	i = 2;
+    else if(i == 1 && ch != '/') {
+	push(ch);
+	i = 0;
+    }
+    if(i == 2) {
+	if(pop == -1)
+		exit(0);
+	else if(pop == ch)
+		printf("The identities match.\n");
+	else {
+		printf("The identities DO NOT match. The XML expression is invalid.\n");
+		exit(0);
+	i = 0;
+        }
+    }
+}
+  if(isEmpty() == 1)
+	printf("Valid.\n");
+else
+	printf("Invalid.\n");
+  exit(0);
+}

@@ -1,0 +1,2 @@
+Question 1) The first recursive call to towers would be towers(4, 2, 1).
+Question 2) Five recursive calls will be made to towers() before the first recursive call actually returns to the initial invocation.

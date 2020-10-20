@@ -1,0 +1,44 @@
+#include "mySort.h"
+void merge(int array[], unsigned int first, unsigned int mid, unsigned int last)
+    {
+	int i = first;
+	int j = mid + 1;
+	int y = 0, x, c;
+	int temp[last - first + 1];
+	for (x = first; x <= last; x++) {
+		temp[y] = array[x];
+		y++;
+	} 
+	y = 0;
+	while (i <= mid && j <= last) {
+		if(array[i] <= array[j]) {
+			temp[y] = array[i];
+			i++;
+			y++;
+		}
+
+	}
+	else {
+		temp[y] = array[j];
+		j++;
+		y++;
+	}
+	y = 0;
+	for (c = first; c <= last; c++) {
+		array[c] = temp[y];
+		y++;
+	}
+    }
+void mySort(int array[], unsigned int first, unsigned int last)
+    {
+	if(last - first + 1 == 1)
+		return;
+	else {
+		int mid = (last + first)/2;
+		mySort(array, first, mid);
+		mySort(array, mid + 1, last);
+		merge(array, first, mid, last);
+	}
+    }
+
+

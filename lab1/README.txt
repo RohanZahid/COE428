@@ -1,0 +1,3 @@
+Everything works!
+
+If the betterSort function has to be used through mySort(), I would just call betterSort and send it the array, 0, and the number of items in the array - 1. For instance, mySort is called like this: mySort(data, nDataItems). Then, in mySort, I'll do this: betterSort(d, 0, n-1). Hence, the items would always be sorted starting from the index of 0, and ending at the last index, which is also the number of items subtracted by 1.
